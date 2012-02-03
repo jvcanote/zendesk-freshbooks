@@ -346,8 +346,8 @@
 
     _postRequest: function(data, userID) {
       return {
-        accepts:      "application/xml",
         data:         data,
+        dataType:     'xml',
         processData:  false,
         type:         'POST',
         url:          this._proxyURL(),
