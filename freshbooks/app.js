@@ -1,5 +1,3 @@
-//= require ./app.js
-
 (function() {
 
   Zendesk.Apps.FreshBooksApp = Zendesk.Apps.App.extend({
