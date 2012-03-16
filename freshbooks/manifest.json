@@ -1,3 +1,15 @@
 {
-  "name": "Freshbooks"
+  "name": "Freshbooks",
+
+  "configuration": {
+    "token": {
+      "type": "text",
+      "required": "true"
+    },
+
+    "url": {
+      "type": "url",
+      "required": "true"
+    }
+  }
 }
