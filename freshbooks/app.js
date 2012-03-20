@@ -118,9 +118,7 @@
     },
 
     launch: function(host, config) {
-      Em.run.next(this, function() {
-        this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.config.token);
-      });
+      this.firstRequest();
     },
 
     requests: {
@@ -171,6 +169,11 @@
 
       this.disableInput(form);
       this.request('loadTasks').perform(this._requestTaskList({ page: 1, projectID: this.projectID }), this.config.token);
+    },
+
+    firstRequest: function() {
+      this._resetLocalVars();
+      this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.config.token);
     },
 
     handleLoadClientsResult: function(e, data) {
@@ -290,8 +293,7 @@
       var form = this.$('.hours form');
 
       this.disableInput(form);
-      this._resetLocalVars();
-      this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.config.token);
+      this.firstRequest();
     },
 
     maskUserInput: function(event) {
