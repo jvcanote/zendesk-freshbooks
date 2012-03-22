@@ -117,7 +117,7 @@
                       '<div class="back"><a href="#" onclick="return false;"><< {{I18n.global.back}}</a></div>'
     },
 
-    launch: function(host, config) {
+    launch: function(host, settings) {
       this.firstRequest();
     },
 
@@ -168,12 +168,12 @@
       this.tasks = [];
 
       this.disableInput(form);
-      this.request('loadTasks').perform(this._requestTaskList({ page: 1, projectID: this.projectID }), this.config.token);
+      this.request('loadTasks').perform(this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
     },
 
     firstRequest: function() {
       this._resetLocalVars();
-      this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.config.token);
+      this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.settings.token);
     },
 
     handleLoadClientsResult: function(e, data) {
@@ -185,9 +185,9 @@
       });
 
       if (page < pages) {
-        this.request('loadClients').perform(this._requestProjectList({ page: (page + 1) }), this.config.token);
+        this.request('loadClients').perform(this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
-        this.request('loadProjects').perform(this._requestProjectList({ page: 1 }), this.config.token);
+        this.request('loadProjects').perform(this._requestProjectList({ page: 1 }), this.settings.token);
       }
     },
 
@@ -214,7 +214,7 @@
       if (this.projects.length === 0) {
         this.showError(this.I18n.t('projects.not_found'));
       } else if (page < pages) {
-        this.request('loadProjects').perform(this._requestProjectList({ page: (page + 1) }), this.config.token);
+        this.request('loadProjects').perform(this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
         notes = this.I18n.t('form.note_text', { ticketID: this.deps.currentTicketID });
 
@@ -238,7 +238,7 @@
       this.tasks = this.tasks.concat(results);
 
       if (page < pages) {
-        this.request('loadTasks').perform(this._requestTaskList({ page: (page + 1), projectID: this.projectID }), this.config.token);
+        this.request('loadTasks').perform(this._requestTaskList({ page: (page + 1), projectID: this.projectID }), this.settings.token);
       } else {
         this.sheet('hours')
             .render('formData', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks })
@@ -266,7 +266,7 @@
       if (this.users.length === 0) {
         this.showError(this.I18n.t('users.not_found'));
       } else if (page < pages) {
-        this.request('loadUsers').perform(this._requestStaffList({ page: (page + 1) }), this.config.token);
+        this.request('loadUsers').perform(this._requestStaffList({ page: (page + 1) }), this.settings.token);
       } else {
         this.sheet('users')
           .render('usersData', { users: this.users })
@@ -329,7 +329,7 @@
 
       options.staff_id = this.memberID;
       this.disableInput(form);
-      this.request('postHours').perform(this._requestTimeEntryCreate(options), this.config.token);
+      this.request('postHours').perform(this._requestTimeEntryCreate(options), this.settings.token);
     },
 
     submitUser: function() {
@@ -343,7 +343,7 @@
 
       this.memberID = select.val();
       this.disableSubmit(form);
-      this.request('loadClients').perform(this._requestClientList({ page: 1 }), this.config.token);
+      this.request('loadClients').perform(this._requestClientList({ page: 1 }), this.settings.token);
     },
 
     _postRequest: function(data, userID) {
@@ -360,12 +360,12 @@
     },
 
     _proxyURL: function() {
-        var config = this.config;
+        var settings = this.settings;
 
         return encodeURI(
           '/proxy/direct?url=%@&timeout=10'
            .fmt(
-             config.url
+             settings.url
            )
          );
       },
