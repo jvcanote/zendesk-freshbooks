@@ -1,3 +1,8 @@
 {
-  "description": "Track how long you're working on tickets and sync with Freshbooks data."
+  "description": "Track how long you're working on tickets and sync with Freshbooks data.",
+
+  "configuration": {
+    "token": { "label": "Token" },
+    "url":   { "label": "URL" }
+  }
 }
