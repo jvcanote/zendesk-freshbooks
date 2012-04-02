@@ -1,7 +1,6 @@
 (function() {
 
-  return ZendeskApps.App.extend({
-    location: ZendeskApps.Site.TICKET_PROPERTIES,
+  return ZendeskApps.defineApp(ZendeskApps.Site.TICKET_PROPERTIES, {
     appID: '/apps/01-freshbooks/versions/1.0.0',
     name: 'FreshBooks',
 
