@@ -274,7 +274,7 @@
     },
 
     handlePostHoursResult: function(e, data) {
-      var form, response = $(data).find('response');
+      var form, response = this.$(data).find('response');
 
       if (response.attr('status') === 'fail') {
         this.showError(response.find('error').text());
@@ -312,7 +312,7 @@
           .not(':button, :submit, :reset, :hidden')
           .not('textarea')
           .each(function(index, el) {
-            field = $(el);
+            field = self.$(el);
             name = field.attr('name');
 
             if (!field.val()) {
