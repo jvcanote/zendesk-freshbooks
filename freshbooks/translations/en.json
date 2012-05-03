@@ -1,8 +1,49 @@
 {
-  "description": "Track how long you're working on tickets and sync with Freshbooks data.",
+  "app": {
+    "configuration": {
+      "name":   { "label": "Name" },
+      "token":  { "label": "Token" },
+      "url":    { "label": "URL" }
+    },
 
-  "configuration": {
-    "token": { "label": "Token" },
-    "url":   { "label": "URL" }
+    "description":  "Track how long you're working on tickets and sync with Freshbooks data.",
+    "name":         "FreshBooks"
+  },
+
+  "error": {
+    "contact_email":  "or contact Freshbooks support at <a href='mailto:support@freshbooks.com'>support@freshbooks.com</a>.",
+    "occurred":       "An error occured",
+    "see_topic":      "See <a target='_blank'' href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
+  },
+
+  "global": {
+    "back":       "Back",
+    "logout":     "logout",
+    "sign_in":    "Sign in",
+    "submit":     "Submit",
+    "submitting": "Submitting..."
+  },
+
+  "form": {
+    "empty":          "{{field}} is empty!",
+    "hours":          "Hours",
+    "note_text":      "Ticket: {{ticketID}}",
+    "notes":          "Notes",
+    "select_project": "Select Project",
+    "select_task":    "Select Task",
+    "success":        "Hours sucessfuly logged!"
+  },
+
+  "problem": "There's been a problem: {{error}}",
+
+  "projects": {
+    "not_found": "No projects found for your FreshBooks account!"
+  },
+
+  "users": {
+    "none":         "Could not find any users.",
+    "not_found":    "No users found for your FreshBooks account!",
+    "not_selected": "No user is selected!",
+    "select":       "Select User"
   }
 }

@@ -2,7 +2,6 @@
 
   return ZendeskApps.defineApp(ZendeskApps.Site.TICKET_PROPERTIES, {
     appID: '/apps/01-freshbooks/versions/1.0.0',
-    name: 'FreshBooks',
 
     //Local vars
     clients:    [],
@@ -13,45 +12,6 @@
     projects:   [],
     tasks:      [],
     users:      [],
-
-    translations: {
-      error: {
-        contact_email: 'or contact Freshbooks support at <a href="mailto:support@freshbooks.com">support@freshbooks.com</a>.',
-        occurred: "An error occured",
-        see_topic: 'See <a target="_blank" href="https://support.zendesk.com/forums/4372">this topic</a> for troubleshooting'
-      },
-
-      global: {
-        back: "Back",
-        logout: "logout",
-        sign_in: "Sign in",
-        submit: "Submit",
-        submitting: "Submitting..."
-      },
-
-      form: {
-        empty: "{{field}} is empty!",
-        hours: "Hours",
-        note_text: "Ticket: {{ticketID}}",
-        notes: "Notes",
-        select_project: "Select Project",
-        select_task: "Select Task",
-        success: "Hours sucessfuly logged!"
-      },
-
-      problem: "There's been a problem: {{error}}",
-
-      projects: {
-        not_found: "No projects found for your FreshBooks account!"
-      },
-
-      users: {
-        none: "Could not find any users.",
-        not_found: "No users found for your FreshBooks account!",
-        not_selected: "No user is selected!",
-        select: "Select User"
-      }
-    },
 
     xmlTemplates: {
       PAGINATED:  'body=<?xml version="1.0" encoding="utf-8"?>' +
@@ -85,7 +45,7 @@
 
     templates: {
       main: '<div class="freshbooks_app">' +
-            '  <div><h3>FreshBooks</h3></div><hr/>' +
+            '  <div><h3>{{I18n.app.name}}</h3></div><hr/>' +
             '  <section data-sheet-name="loading" class="loading"></section>' +
             '  <section data-sheet-name="hours" class="hours"></section>' +
             '  <section data-sheet-name="users" class="users"></section>' +
