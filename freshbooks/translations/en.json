@@ -1,7 +1,6 @@
 {
   "app": {
     "configuration": {
-      "name":   { "label": "Name" },
       "token":  { "label": "Token" },
       "url":    { "label": "URL" }
     },

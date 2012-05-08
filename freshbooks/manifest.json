@@ -1,5 +1,5 @@
 {
-  "name": "FreshBooks",
+  "default_locale": "en",
   "private": true,
 
   "configuration": {
