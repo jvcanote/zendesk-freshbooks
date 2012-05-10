@@ -14,18 +14,18 @@
     users:      [],
 
     xmlTemplates: {
-      PAGINATED:  'body=<?xml version="1.0" encoding="utf-8"?>' +
+      PAGINATED:  '<?xml version="1.0" encoding="utf-8"?>' +
                   '<request method="%@">' +
                   '  <page>%@</page>' +
                   '  <per_page>100</per_page>' +
                   '</request>',
-      TASK_LIST:  'body=<?xml version="1.0" encoding="utf-8"?>'+
+      TASK_LIST:  '<?xml version="1.0" encoding="utf-8"?>'+
                   '<request method="task.list">' +
                   '  <project_id>%@</project_id>' +
                   '  <page>%@</page>' +
                   '  <per_page>100</per_page>' +
                   '</request>',
-      TIME_ENTRY: 'body=<?xml version="1.0" encoding="ISO-8859-1"?>' +
+      TIME_ENTRY: '<?xml version="1.0" encoding="ISO-8859-1"?>' +
                   '<request method="time_entry.create">' +
                   '  <time_entry>' +
                   '    <project_id>%@</project_id>' +
@@ -309,25 +309,13 @@
       return {
         data:         data,
         dataType:     'xml',
-        processData:  false,
         type:         'POST',
-        url:          this._proxyURL(),
+        url:          this.settings.url,
         headers:      {
           'Authorization': 'Basic ' + Base64.encode('%@:X'.fmt(userID))
         }
       };
     },
-
-    _proxyURL: function() {
-        var settings = this.settings;
-
-        return encodeURI(
-          '/proxy/direct?url=%@&timeout=10'
-           .fmt(
-             settings.url
-           )
-         );
-      },
 
     _requestClientList: function(options) {
       return this._requestPaginated('client.list', options.page);
