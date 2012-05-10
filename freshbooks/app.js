@@ -43,39 +43,6 @@
       currentTicketID:  'workspace.ticket.id'
     },
 
-    templates: {
-      main: '<div class="freshbooks_app">' +
-            '  <div><h3>{{I18n.app.name}}</h3></div><hr/>' +
-            '  <section data-sheet-name="loading" class="loading"></section>' +
-            '  <section data-sheet-name="hours" class="hours"></section>' +
-            '  <section data-sheet-name="users" class="users"></section>' +
-            '  <section data-sheet-name="message" class="message"></section>' +
-            '</div>',
-      formData: '<form><div class="field"><p class="title">{{I18n.form.select_project}}</p><p><select class="projects" name="project_id"><option></option>' +
-                '{{#projects}}<option value="{{id}}">{{name}}</option>{{/projects}}' +
-                '</select></p></div>' +
-                '<div class="field"><p class="title">{{I18n.form.select_task}}<p><p><select name="task_id">' +
-                '{{#tasks}}<option value="{{id}}">{{name}}</option>{{/tasks}}' +
-                '</select></p></div>' +
-                '<div class="field"><p class="title">{{I18n.form.notes}}<p><textarea class="notes" name="notes">{{notes}}</textarea></p></div>' +
-                '<div class="field"><p class="title">{{I18n.form.hours}}<p><input class="input_hours" type="text" name="hours" value="{{hours}}" /></p></div>' +
-                '<p class="input"><input disabled="disabled" type="submit" value="{{I18n.global.submit}}" class="submit" onclick="return false"/>' +
-                ' &nbsp;&nbsp;&nbsp;&nbsp; (<a class="logout" href="#" onclick="return false;">{{I18n.global.logout}}</a>)</p>' +
-                '</form>',
-      usersData:  '<form><p>{{I18n.users.select}}: &nbsp;&nbsp;<select name="id">' +
-                  '{{#users}}<option value="{{id}}">{{name}}</option>{{/users}}' +
-                  '</select></p><p class="input"><input type="submit" value="{{I18n.global.sign_in}}" class="submit" onclick="return false"/></p></form>' +
-                  '{{^users}}{{I18n.users.none}}{{/users}}',
-      submitFail: '<div class="error">' +
-                  ' <p>{{I18n.error.occurred}}:</p><p class="exception">{{message}}</p>' +
-                  ' <p>{{{I18n.error.see_topic}}}</p>'+
-                  ' <p>{{{I18n.error.contact_email}}}</p>' +
-                  '</div>' +
-                  '<div class="back"><a href="#" onclick="return false;"><< {{I18n.global.back}}</a></div>',
-      submitSuccess:  '<div class="success">{{message}}</div>' +
-                      '<div class="back"><a href="#" onclick="return false;"><< {{I18n.global.back}}</a></div>'
-    },
-
     launch: function(host, settings) {
       this.firstRequest();
     },

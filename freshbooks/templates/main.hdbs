@@ -1,0 +1,7 @@
+<div class="freshbooks_app">
+  <div><h3>{{I18n.app.name}}</h3></div><hr/>
+  <section data-sheet-name="loading" class="loading"></section>
+  <section data-sheet-name="hours" class="hours"></section>
+  <section data-sheet-name="users" class="users"></section>
+  <section data-sheet-name="message" class="message"></section>
+</div>

@@ -1,0 +1,4 @@
+<form><p>{{I18n.users.select}}: &nbsp;&nbsp;<select name="id">
+{{#users}}<option value="{{id}}">{{name}}</option>{{/users}}
+</select></p><p class="input"><input type="submit" value="{{I18n.global.sign_in}}" class="submit" onclick="return false"/></p></form>
+{{^users}}{{I18n.users.none}}{{/users}}
