@@ -65,11 +65,11 @@
       'keypress .hours input[name=hours]':      'maskUserInput',
 
       /** AJAX callbacks **/
-      'loadClients.success':  'handleLoadClientsResult',
-      'loadProjects.success': 'handleLoadProjectsResult',
-      'loadTasks.success':    'handleLoadTasksResult',
-      'loadUsers.success':    'handleLoadUsersResult',
-      'postHours.success':    'handlePostHoursResult',
+      'loadClients.done':  'handleLoadClientsResult',
+      'loadProjects.done': 'handleLoadProjectsResult',
+      'loadTasks.done':    'handleLoadTasksResult',
+      'loadUsers.done':    'handleLoadUsersResult',
+      'postHours.done':    'handlePostHoursResult',
       'loadClients.fail':     'handleFailedRequest',
       'loadProjects.fail':    'handleFailedRequest',
       'loadTasks.fail':       'handleFailedRequest',
