@@ -1,0 +1,4 @@
+<div class="freshbooks_app">
+  <div><h3>FreshBooks</h3></div><hr/>
+  <div data-main></div>
+</div>

@@ -37,7 +37,7 @@
                   '</request>'
     },
 
-    defaultSheet: 'loading',
+    defaultState: 'loading',
 
     dependencies: {
       currentTicketID:  'workspace.ticket.id'
@@ -78,7 +78,7 @@
     },
 
     backToForm: function() {
-      this.sheet('hours').show();
+      this.switchTo('hours');
     },
 
     changeProject: function() {
@@ -94,12 +94,12 @@
       this.tasks = [];
 
       this.disableInput(form);
-      this.request('loadTasks').perform(this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
+      this.ajax('loadTasks', this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
     },
 
     firstRequest: function() {
       this._resetLocalVars();
-      this.request('loadUsers').perform(this._requestStaffList({ page: 1 }), this.settings.token);
+      this.ajax('loadUsers', this._requestStaffList({ page: 1 }), this.settings.token);
     },
 
     handleLoadClientsResult: function(e, data) {
@@ -111,9 +111,9 @@
       });
 
       if (page < pages) {
-        this.request('loadClients').perform(this._requestProjectList({ page: (page + 1) }), this.settings.token);
+        this.ajax('loadClients', this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
-        this.request('loadProjects').perform(this._requestProjectList({ page: 1 }), this.settings.token);
+        this.ajax('loadProjects', this._requestProjectList({ page: 1 }), this.settings.token);
       }
     },
 
@@ -127,7 +127,7 @@
         name =    project.children('name').text();
 
         if (client)
-          name = "%@ - %@".fmt(name, client);
+          name = helpers.fmt("%@ - %@", name, client);
 
         results.push({
           id: project.children('project_id').text(),
@@ -140,13 +140,11 @@
       if (this.projects.length === 0) {
         this.showError(this.I18n.t('projects.not_found'));
       } else if (page < pages) {
-        this.request('loadProjects').perform(this._requestProjectList({ page: (page + 1) }), this.settings.token);
+        this.ajax('loadProjects', this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
-        notes = this.I18n.t('form.note_text', { ticketID: this.deps.currentTicketID });
+        notes = this.I18n.t('form.note_text', { ticketID: this.dependency('currentTicketID') });
 
-        this.sheet('hours')
-            .render('formData', { projects: this.projects, notes: notes })
-            .show();
+        this.switchTo('hours', { projects: this.projects, notes: notes });
       }
     },
 
@@ -164,11 +162,9 @@
       this.tasks = this.tasks.concat(results);
 
       if (page < pages) {
-        this.request('loadTasks').perform(this._requestTaskList({ page: (page + 1), projectID: this.projectID }), this.settings.token);
+        this.ajax('loadTasks', this._requestTaskList({ page: (page + 1), projectID: this.projectID }), this.settings.token);
       } else {
-        this.sheet('hours')
-            .render('formData', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks })
-            .show();
+        this.switchTo('hours', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks });
 
         form = this.$('.hours form');
         this.enableInput(form);
@@ -183,7 +179,7 @@
         member = self.$(el);
         results.push({
           id:   member.children('staff_id').text(),
-          name: "%@ %@".fmt(member.children('first_name').text(), member.children('last_name').text())
+          name: helpers.fmt("%@ %@", member.children('first_name').text(), member.children('last_name').text())
         });
       });
 
@@ -192,11 +188,9 @@
       if (this.users.length === 0) {
         this.showError(this.I18n.t('users.not_found'));
       } else if (page < pages) {
-        this.request('loadUsers').perform(this._requestStaffList({ page: (page + 1) }), this.settings.token);
+        this.ajax('loadUsers', this._requestStaffList({ page: (page + 1) }), this.settings.token);
       } else {
-        this.sheet('users')
-          .render('usersData', { users: this.users })
-          .show();
+        this.switchTo('users', { users: this.users });
       }
     },
 
@@ -209,7 +203,7 @@
         this.showSuccess(this.I18n.t('form.success'));
         form = this.$('.hours form');
         form.find('input[name=hours]').val('');
-        form.find('textarea[name=notes]').val(this.I18n.t('form.note_text', { ticketID: this.deps.currentTicketID }));
+        form.find('textarea[name=notes]').val(this.I18n.t('form.note_text', { ticketID: this.dependency('currentTicketID') }));
       }
 
       this.enableInput(this.$('.hours form'));
@@ -255,7 +249,7 @@
 
       options.staff_id = this.memberID;
       this.disableInput(form);
-      this.request('postHours').perform(this._requestTimeEntryCreate(options), this.settings.token);
+      this.ajax('postHours', this._requestTimeEntryCreate(options), this.settings.token);
     },
 
     submitUser: function() {
@@ -269,7 +263,7 @@
 
       this.memberID = select.val();
       this.disableSubmit(form);
-      this.request('loadClients').perform(this._requestClientList({ page: 1 }), this.settings.token);
+      this.ajax('loadClients', this._requestClientList({ page: 1 }), this.settings.token);
     },
 
     _postRequest: function(data, userID) {
@@ -279,7 +273,7 @@
         type:         'POST',
         url:          this.settings.url,
         headers:      {
-          'Authorization': 'Basic ' + Base64.encode('%@:X'.fmt(userID))
+          'Authorization': 'Basic ' + Base64.encode(helpers.fmt('%@:X', userID))
         }
       };
     },
@@ -290,19 +284,19 @@
 
     _requestTimeEntryCreate: function(options) {
       return encodeURI(
-        this.xmlTemplates.TIME_ENTRY
-            .fmt(
-              options.project_id,
-              options.task_id,
-              options.hours,
-              options.notes,
-              options.staff_id
-            )
+        helpers.fmt(
+          this.xmlTemplates.TIME_ENTRY,
+          options.project_id,
+          options.task_id,
+          options.hours,
+          options.notes,
+          options.staff_id
+        )
       );
     },
 
     _requestPaginated: function(method, page) {
-      return encodeURI( this.xmlTemplates.PAGINATED.fmt(method, page) );
+      return encodeURI( helpers.fmt(this.xmlTemplates.PAGINATED, method, page) );
     },
 
     _requestProjectList: function(options) {
@@ -314,7 +308,7 @@
     },
 
     _requestTaskList: function(options) {
-      return encodeURI( this.xmlTemplates.TASK_LIST.fmt(options.projectID, options.page) );
+      return encodeURI( helpers.fmt(this.xmlTemplates.TASK_LIST, options.projectID, options.page) );
     },
 
     _resetLocalVars: function() {
@@ -360,15 +354,11 @@
     handleFailedRequest: function(event, jqXHR, textStatus, errorThrown) { this.showError( this.I18n.t('problem', { error: errorThrown.toString() }) ); },
 
     showError: function(msg) {
-      this.sheet('message')
-        .render('submitFail', { message: msg })
-        .show();
+      this.switchTo('submitFail', { message: msg });
     },
 
     showSuccess: function(msg) {
-      this.sheet('message')
-        .render('submitSuccess', { message: msg })
-        .show();
+      this.switchTo('submitSuccess', { message: msg });
     }
   });
 
