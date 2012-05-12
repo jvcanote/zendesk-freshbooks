@@ -40,7 +40,7 @@
     defaultState: 'loading',
 
     dependencies: {
-      currentTicketID:  'workspace.ticket.id'
+      currentTicketID:  'ticket.id'
     },
 
     launch: function(host, settings) {
