@@ -7,7 +7,7 @@
   </select></p></div>
   <div class="field"><p class="title">{{t "form.notes"}}<p><textarea class="notes" name="notes">{{notes}}</textarea></p></div>
   <div class="field"><p class="title">{{t "form.hours"}}<p><input class="input_hours" type="text" name="hours" value="{{hours}}" /></p></div>
-  <p class="input"><input disabled="disabled" type="submit" value="{{t "global.submit"}}" class="submit" onclick="return false"/>
+  <p class="input"><input disabled="disabled" type="submit" value="{{t "global.submit"}}" class="submit btn" onclick="return false"/>
    &nbsp;&nbsp;&nbsp;&nbsp; (<a class="logout" href="#" onclick="return false;">{{t "global.logout"}}</a>)</p>
   </form>
 </div>

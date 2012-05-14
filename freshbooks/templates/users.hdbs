@@ -1,6 +1,6 @@
 <div class="users">
   <form><p>{{t "users.select"}}: &nbsp;&nbsp;<select name="id">
   {{#users}}<option value="{{id}}">{{name}}</option>{{/users}}
-  </select></p><p class="input"><input type="submit" value="{{t "global.sign_in"}}" class="submit" onclick="return false"/></p></form>
+  </select></p><p class="input"><input type="submit" value="{{t "global.sign_in"}}" class="submit btn" onclick="return false"/></p></form>
   {{^users}}{{t "users.none"}}{{/users}}
 </div>
