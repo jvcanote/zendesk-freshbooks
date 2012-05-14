@@ -198,9 +198,9 @@
       var form, response = this.$(data).find('response');
 
       if (response.attr('status') === 'fail') {
-        this.showError(response.find('error').text());
+        this.showError(response.find('error').text(), 'error');
       } else {
-        this.showSuccess(this.I18n.t('form.success'));
+        services.notify(this.I18n.t('form.success'));
         form = this.$('.hours form');
         form.find('input[name=hours]').val('');
         form.find('textarea[name=notes]').val(this.I18n.t('form.note_text', { ticketID: this.dependency('currentTicketID') }));
@@ -355,11 +355,8 @@
 
     showError: function(msg) {
       this.switchTo('submitFail', { message: msg });
-    },
-
-    showSuccess: function(msg) {
-      this.switchTo('submitSuccess', { message: msg });
     }
+
   });
 
 }());
