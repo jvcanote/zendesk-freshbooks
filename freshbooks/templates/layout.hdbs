@@ -12,6 +12,6 @@
   }
 </style>
 <div class="freshbooks_app">
-  <div><h3>{{t "app.name"}} <span class="logo"></span></h3></div><hr/>
+  <div><h3>{{setting "name"}} <span class="logo"></span></h3></div><hr/>
   <div data-main></div>
 </div>
