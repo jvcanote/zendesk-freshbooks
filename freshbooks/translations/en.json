@@ -1,6 +1,6 @@
 {
   "app": {
-    "configuration": {
+    "parameters": {
       "token":  { "label": "Token" },
       "url":    { "label": "URL" }
     },

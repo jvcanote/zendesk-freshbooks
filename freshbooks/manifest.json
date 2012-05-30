@@ -8,15 +8,16 @@
   "default_locale": "en",
   "private": false,
 
-  "configuration": {
-    "token": {
-      "type": "text",
-      "required": "true"
-    },
-
-    "url": {
+  "parameters": [
+    {
+      "name": "url",
       "type": "url",
       "required": "true"
+    },
+    {
+      "name": "token",
+      "type": "text",
+      "required": "true"
     }
-  }
+  ]
 }
