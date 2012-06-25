@@ -39,10 +39,6 @@
 
     defaultState: 'loading',
 
-    dependencies: {
-      currentTicketID:  'ticket.id'
-    },
-
     launch: function(host, settings) {
       this.firstRequest();
     },
@@ -142,7 +138,7 @@
       } else if (page < pages) {
         this.ajax('loadProjects', this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
-        notes = this.I18n.t('form.note_text', { ticketID: this.dependency('currentTicketID') });
+        notes = this.I18n.t('form.note_text', { ticketID: this.ticket().id() });
 
         this.switchTo('hours', { projects: this.projects, notes: notes });
       }
@@ -203,7 +199,7 @@
         services.notify(this.I18n.t('form.success'));
         form = this.$('.hours form');
         form.find('input[name=hours]').val('');
-        form.find('textarea[name=notes]').val(this.I18n.t('form.note_text', { ticketID: this.dependency('currentTicketID') }));
+        form.find('textarea[name=notes]').val(this.I18n.t('form.note_text', { ticketID: this.ticket().id() }));
       }
 
       this.enableInput(this.$('.hours form'));
