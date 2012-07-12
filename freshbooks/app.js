@@ -1,8 +1,6 @@
 (function() {
 
   return {
-    appID: '/apps/01-freshbooks/versions/1.0.0',
-
     //Local vars
     clients:    [],
     memberID:   undefined,
