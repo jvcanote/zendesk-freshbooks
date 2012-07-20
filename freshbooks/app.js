@@ -96,7 +96,7 @@
       this.ajax('loadUsers', this._requestStaffList({ page: 1 }), this.settings.token);
     },
 
-    handleLoadClientsResult: function(e, data) {
+    handleLoadClientsResult: function(data) {
       var self = this, client, clients = this.$(data).find('clients'), page = parseInt(clients.attr('page'), 10), pages = parseInt(clients.attr('pages'), 10);
 
       clients.children('client').each(function(index, el) {
@@ -111,7 +111,7 @@
       }
     },
 
-    handleLoadProjectsResult: function(e, data) {
+    handleLoadProjectsResult: function(data) {
       var client, form = this.$('.hours form'), name, notes, self = this, project, projects = this.$(data).find('projects'),
           page = parseInt(projects.attr('page'), 10), pages = parseInt(projects.attr('pages'), 10), results = [];
 
@@ -142,7 +142,7 @@
       }
     },
 
-    handleLoadTasksResult: function(e, data) {
+    handleLoadTasksResult: function(data) {
       var form, self = this, task, tasks = this.$(data).find('tasks'), page = parseInt(tasks.attr('page'), 10), pages = parseInt(tasks.attr('pages'), 10), results = [];
 
       tasks.children('task').each(function(index, el) {
@@ -166,7 +166,7 @@
       }
     },
 
-    handleLoadUsersResult: function(e, data) {
+    handleLoadUsersResult: function(data) {
       var member, self = this, results = [], staffMembers = this.$(data).find('staff_members'), page = parseInt(staffMembers.attr('page'), 10), pages = parseInt(staffMembers.attr('pages'), 10);
 
       staffMembers.children('member').each(function(index, el) {
@@ -188,7 +188,7 @@
       }
     },
 
-    handlePostHoursResult: function(e, data) {
+    handlePostHoursResult: function(data) {
       var form, response = this.$(data).find('response');
 
       if (response.attr('status') === 'fail') {
@@ -345,7 +345,7 @@
         .val(submit.data('originalValue'));
     },
 
-    handleFailedRequest: function(event, jqXHR, textStatus, errorThrown) { this.showError( this.I18n.t('problem', { error: errorThrown.toString() }) ); },
+    handleFailedRequest: function(jqXHR, textStatus, errorThrown) { this.showError( this.I18n.t('problem', { error: errorThrown.toString() }) ); },
 
     showError: function(msg) {
       this.switchTo('submitFail', { message: msg });
