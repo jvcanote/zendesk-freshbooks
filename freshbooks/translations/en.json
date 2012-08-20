@@ -5,8 +5,7 @@
       "url":    { "label": "URL" }
     },
 
-    "description":  "Easily track time spent on tickets with FreshBooks",
-    "name":         "FreshBooks"
+    "description":  "Easily track time spent on tickets with FreshBooks"
   },
 
   "error": {
