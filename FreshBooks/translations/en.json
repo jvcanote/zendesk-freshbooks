@@ -2,7 +2,10 @@
   "app": {
     "parameters": {
       "token":  { "label": "Token" },
-      "url":    { "label": "URL" }
+      "url":    {
+        "label": "URL",
+        "helpText": "The API URL for your FreshBooks account. It should end in \"/api/2.1/xml-in\"."
+      }
     },
 
     "description":  "Easily track time spent on tickets with FreshBooks"
