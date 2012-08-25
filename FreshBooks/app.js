@@ -11,30 +11,6 @@
     tasks:      [],
     users:      [],
 
-    xmlTemplates: {
-      PAGINATED:  '<?xml version="1.0" encoding="utf-8"?>' +
-                  '<request method="%@">' +
-                  '  <page>%@</page>' +
-                  '  <per_page>100</per_page>' +
-                  '</request>',
-      TASK_LIST:  '<?xml version="1.0" encoding="utf-8"?>'+
-                  '<request method="task.list">' +
-                  '  <project_id>%@</project_id>' +
-                  '  <page>%@</page>' +
-                  '  <per_page>100</per_page>' +
-                  '</request>',
-      TIME_ENTRY: '<?xml version="1.0" encoding="ISO-8859-1"?>' +
-                  '<request method="time_entry.create">' +
-                  '  <time_entry>' +
-                  '    <project_id>%@</project_id>' +
-                  '    <task_id>%@</task_id>' +
-                  '    <hours>%@</hours>' +
-                  '    <notes><![CDATA[%@]]></notes>' +
-                  '    <staff_id>%@</staff_id>' +
-                  '  </time_entry>' +
-                  '</request>'
-    },
-
     defaultState: 'loading',
 
     launch: function(host, settings) {
@@ -277,20 +253,15 @@
     },
 
     _requestTimeEntryCreate: function(options) {
-      return encodeURI(
-        helpers.fmt(
-          this.xmlTemplates.TIME_ENTRY,
-          options.project_id,
-          options.task_id,
-          options.hours,
-          options.notes,
-          options.staff_id
-        )
-      );
+      return encodeURL( this.renderTemplate( 'time_entry.xml', options ) );
     },
 
     _requestPaginated: function(method, page) {
-      return encodeURI( helpers.fmt(this.xmlTemplates.PAGINATED, method, page) );
+      var message = this.renderTemplate('paginated.xml', {
+        method: method,
+        page: page
+      });
+      return encodeURL( message );
     },
 
     _requestProjectList: function(options) {
@@ -302,7 +273,7 @@
     },
 
     _requestTaskList: function(options) {
-      return encodeURI( helpers.fmt(this.xmlTemplates.TASK_LIST, options.projectID, options.page) );
+      return encodeURL( this.renderTemplate( 'task_list.xml', options ) );
     },
 
     _resetLocalVars: function() {
