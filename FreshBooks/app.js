@@ -253,7 +253,7 @@
     },
 
     _requestTimeEntryCreate: function(options) {
-      return encodeURL( this.renderTemplate( 'time_entry.xml', options ) );
+      return encodeURI( this.renderTemplate( 'time_entry.xml', options ) );
     },
 
     _requestPaginated: function(method, page) {
@@ -261,7 +261,7 @@
         method: method,
         page: page
       });
-      return encodeURL( message );
+      return encodeURI( message );
     },
 
     _requestProjectList: function(options) {
@@ -273,7 +273,7 @@
     },
 
     _requestTaskList: function(options) {
-      return encodeURL( this.renderTemplate( 'task_list.xml', options ) );
+      return encodeURI( this.renderTemplate( 'task_list.xml', options ) );
     },
 
     _resetLocalVars: function() {
