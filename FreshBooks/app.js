@@ -253,15 +253,14 @@
     },
 
     _requestTimeEntryCreate: function(options) {
-      return encodeURI( this.renderTemplate( 'time_entry.xml', options ) );
+      return this.renderAndEscapeXML( 'time_entry.xml', options );
     },
 
     _requestPaginated: function(method, page) {
-      var message = this.renderTemplate('paginated.xml', {
+      return this.renderAndEscapeXML('paginated.xml', {
         method: method,
         page: page
       });
-      return encodeURI( message );
     },
 
     _requestProjectList: function(options) {
@@ -273,7 +272,7 @@
     },
 
     _requestTaskList: function(options) {
-      return encodeURI( this.renderTemplate( 'task_list.xml', options ) );
+      return this.renderAndEscapeXML( 'task_list.xml', options );
     },
 
     _resetLocalVars: function() {
@@ -320,6 +319,13 @@
 
     showError: function(msg) {
       this.switchTo('submitFail', { message: msg });
+    },
+
+    renderAndEscapeXML: function(templateName, data) {
+      Object.keys(data).forEach(function(key) {
+        data[key] = helpers.safeString( data[key] );
+      });
+      return encodeURI( this.renderTemplate(templateName, data) );
     }
   };
 
