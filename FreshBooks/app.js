@@ -13,10 +13,6 @@
 
     defaultState: 'loading',
 
-    launch: function(host, settings) {
-      this.firstRequest();
-    },
-
     requests: {
       loadClients:  function(data, userID) { return this._postRequest(data, userID); },
       loadProjects: function(data, userID) { return this._postRequest(data, userID); },
@@ -33,6 +29,8 @@
       'change .hours select[name=project_id]':  'changeProject',
       'change .hours select[name=task_id]':     'enableInput',
       'keypress .hours input[name=hours]':      'maskUserInput',
+
+      'app.activated': 'firstRequest',
 
       /** AJAX callbacks **/
       'loadClients.done':  'handleLoadClientsResult',
@@ -67,7 +65,10 @@
       this.ajax('loadTasks', this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
     },
 
-    firstRequest: function() {
+    firstRequest: function(data) {
+      var firstLoad = data && data.firstLoad;
+      if ( !firstLoad ) { return; }
+
       this._resetLocalVars();
       this.ajax('loadUsers', this._requestStaffList({ page: 1 }), this.settings.token);
     },
