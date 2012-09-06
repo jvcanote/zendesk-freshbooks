@@ -1,10 +1,6 @@
 select {
   border: 1px solid #CCCCCC;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+  @include border-radius(3px);
 }
 
 footer {
