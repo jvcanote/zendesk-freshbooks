@@ -321,7 +321,10 @@
         .val(submit.data('originalValue'));
     },
 
-    handleFailedRequest: function(jqXHR, textStatus, errorThrown) { this.showError( this.I18n.t('problem', { error: errorThrown.toString() }) ); },
+    handleFailedRequest: function(jqXHR, textStatus, errorThrown) {
+      var message = textStatus === 'parsererror' ? this.I18n.t('invalidResponse') : this.I18n.t('problem', { error: errorThrown.toString() });
+      this.showError(message);
+    },
 
     showError: function(msg) {
       this.switchTo('submitFail', { message: msg });

@@ -35,6 +35,8 @@
     "success":        "Hours sucessfuly logged!"
   },
 
+  "invalidResponse": "API response contains invalid data!",
+
   "problem": "There's been a problem: {{error}}",
 
   "projects": {
