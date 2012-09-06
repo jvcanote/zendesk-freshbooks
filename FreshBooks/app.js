@@ -30,7 +30,7 @@
       'change .hours select[name=task_id]':     'enableInput',
       'keypress .hours input[name=hours]':      'maskUserInput',
 
-      'app.activated': 'firstRequest',
+      'app.activated': 'appActivated',
 
       /** AJAX callbacks **/
       'loadClients.done':  'handleLoadClientsResult',
@@ -43,6 +43,13 @@
       'loadTasks.fail':       'handleFailedRequest',
       'loadUsers.fail':       'handleFailedRequest',
       'postHours.fail':       'handleFailedRequest'
+    },
+
+    appActivated: function(data) {
+      var firstLoad = data && data.firstLoad;
+      if ( !firstLoad ) { return; }
+
+      this.firstRequest();
     },
 
     backToForm: function() {
@@ -65,9 +72,7 @@
       this.ajax('loadTasks', this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
     },
 
-    firstRequest: function(data) {
-      var firstLoad = data && data.firstLoad;
-      if ( !firstLoad ) { return; }
+    firstRequest: function() {
 
       this._resetLocalVars();
       this.ajax('loadUsers', this._requestStaffList({ page: 1 }), this.settings.token);
