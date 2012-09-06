@@ -1,0 +1,62 @@
+select {
+  border: 1px solid #CCCCCC;
+  @include border-radius(3px);
+}
+
+footer {
+  display: none;
+}
+
+.hours {
+  .field {
+    margin-bottom: 10px;
+
+    .input_hours {
+      width: 50px
+    }
+
+    .notes {
+      width: 270px
+    }
+
+    .projects {
+      width: 280px;
+    }
+
+    .title {
+      margin-bottom: 3px;
+    }
+  }
+
+  .input {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.message {
+  p {
+    font-weight: bold;
+  }
+
+  .back {
+    margin: 10px 0;
+  }
+
+  .error {
+    color: red;
+    padding: 10px 20px;
+
+    .exception {
+      padding: 10px;
+    }
+  }
+}
+
+.users {
+  text-align: right;
+
+  .input {
+    padding-top: 20px;
+  }
+}
