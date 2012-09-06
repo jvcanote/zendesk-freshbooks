@@ -1,8 +1,9 @@
 <div class="message">
   <div class="error">
-   <p>{{t "error.occurred"}}:</p><p class="exception">{{message}}</p>
-   <p>{{{t "error.see_topic"}}}</p>
-   <p>{{{t "error.contact_email"}}}</p>
+    <p>{{t "error.occurred"}}:</p>
+    <p class="exception">{{message}}</p>
+    <p>{{{t "error.see_topic"}}}</p>
+    <p>{{{t "error.contact_email"}}}</p>
   </div>
   <div class="back"><a href="#" onclick="return false;"><< {{t "global.back"}}</a></div>
 </div>
