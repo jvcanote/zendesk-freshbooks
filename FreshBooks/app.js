@@ -53,7 +53,7 @@
     },
 
     backToForm: function() {
-      this.switchTo('hours');
+      this.switchTo('hours', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks });
     },
 
     changeProject: function() {
