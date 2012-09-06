@@ -53,7 +53,7 @@
     },
 
     backToForm: function() {
-      this.switchTo('hours', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks });
+      this.switchTo('hours', this);
     },
 
     changeProject: function() {
@@ -322,7 +322,9 @@
     },
 
     handleFailedRequest: function(jqXHR, textStatus, errorThrown) {
-      var message = textStatus === 'parsererror' ? this.I18n.t('invalidResponse') : this.I18n.t('problem', { error: errorThrown.toString() });
+      var message = textStatus === 'parsererror' ?
+                                    this.I18n.t('invalidResponse') :
+                                    this.I18n.t('problem', { error: errorThrown.toString() });
       this.showError(message);
     },
 
