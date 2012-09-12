@@ -224,6 +224,7 @@
         return false;
 
       options.staff_id = this.memberID;
+      options.notes = form.find('.notes').val();
       this.disableInput(form);
       this.ajax('postHours', this._requestTimeEntryCreate(options), this.settings.token);
     },
