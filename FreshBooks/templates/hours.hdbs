@@ -1,33 +1,37 @@
 <div class="hours">
   <form>
     <div class="field">
-      <p class="title">{{t "form.select_project"}}</p>
-      <p>
+      <label class="title">
+        {{t "form.select_project"}}
         <select class="projects" name="project_id">
           <option></option>
           {{#projects}}<option value="{{id}}">{{name}}</option>{{/projects}}
         </select>
-      </p>
+      </label>
     </div>
     <div class="field">
-      <p class="title">{{t "form.select_task"}}</p>
-      <p>
+      <label class="title">
+        {{t "form.select_task"}}
         <select name="task_id">
           {{#tasks}}<option value="{{id}}">{{name}}</option>{{/tasks}}
         </select>
-      </p>
+      </label>
     </div>
     <div class="field">
-      <p class="title">{{t "form.notes"}}</p>
-      <p><textarea class="notes" name="notes">{{notes}}</textarea></p>
+      <label class="title">
+        {{t "form.notes"}}
+        <textarea class="notes" name="notes">{{notes}}</textarea>
+      </label>
     </div>
     <div class="field">
-      <p class="title">{{t "form.hours"}}</p>
-      <p><input class="input_hours" type="text" name="hours" value="{{hours}}" /></p>
+      <label class="title">
+        {{t "form.hours"}}
+        <input class="input_hours" type="text" name="hours" value="{{hours}}" />
+      </label>
     </div>
-    <p class="input">
+    <footer class="field">
       <input disabled="disabled" type="submit" value="{{t "global.submit"}}" class="submit btn btn-inverse" onclick="return false"/>
       &nbsp;&nbsp;&nbsp;&nbsp; (<a class="logout" href="#" onclick="return false;">{{t "global.logout"}}</a>)
-    </p>
+    </footer>
   </form>
 </div>

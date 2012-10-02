@@ -5,30 +5,24 @@ select {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  display: inline-block;
 }
 
-footer {
-  display: none;
-}
+footer { display: none; }
 
 .hours {
   .field {
-    margin-bottom: 10px;
+    & + .field { margin-top: 10px; }
 
-    .input_hours {
-      width: 50px
-    }
+    .input_hours { width: 50px; }
 
-    .notes {
-      width: 270px
-    }
+    .notes { width: 270px; }
 
-    .projects {
-      width: 280px;
-    }
+    .projects { width: 280px; }
 
-    .title {
-      margin-bottom: 3px;
+    input, textarea, select {
+      display: block;
+      margin-top: 3px;
     }
   }
 
@@ -36,6 +30,8 @@ footer {
     margin-left: 0;
     margin-top: 10px;
   }
+
+  footer { display: block; }
 }
 
 .message {

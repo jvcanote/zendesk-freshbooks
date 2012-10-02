@@ -1,11 +1,11 @@
 <div class="users">
   <form>
-    <p>
+    <label>
       {{t "users.select"}}: &nbsp;&nbsp;
       <select name="id">
         {{#users}}<option value="{{id}}">{{name}}</option>{{/users}}
       </select>
-    </p>
+    </label>
     <p class="input">
       <input type="submit" value="{{t "global.sign_in"}}" class="submit btn btn-inverse" onclick="return false"/>
     </p>
