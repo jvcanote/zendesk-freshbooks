@@ -30,8 +30,8 @@
     "hours":          "Hours",
     "note_text":      "Ticket: {{ticketID}}",
     "notes":          "Notes",
-    "select_project": "Select Project",
-    "select_task":    "Select Task",
+    "select_project": "Project",
+    "select_task":    "Task",
     "success":        "Hours sucessfuly logged!"
   },
 
