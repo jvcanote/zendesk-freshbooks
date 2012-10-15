@@ -46,12 +46,12 @@
     },
 
     appActivated: function(data) {
-      var alreadySignedIn = this.store('memberID') != null;
+      if ( this.store('memberID') == null ) {
+        return this.goToChooseUser();
+      }
 
-      if ( alreadySignedIn && !this.hoursFormDataFetched ) {
+      if (!this.hoursFormDataFetched ) {
         this.fetchHoursFormData();
-      } else {
-        this.goToChooseUser();
       }
     },
 
