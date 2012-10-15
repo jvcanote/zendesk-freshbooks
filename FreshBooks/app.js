@@ -49,10 +49,8 @@
       var alreadySignedIn = this.store('memberID') != null;
 
       if ( alreadySignedIn && !this.hoursFormDataFetched ) {
-        console.log('already signed in as ' + this.store('memberID') + '; going to the hours form...');
         this.fetchHoursFormData();
-      } else if ( data && data.firstLoad ) {
-        console.log('first load; loading users...');
+      } else {
         this.goToChooseUser();
       }
     },
