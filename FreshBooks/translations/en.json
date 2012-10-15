@@ -22,7 +22,8 @@
     "logout":     "logout",
     "sign_in":    "Sign in",
     "submit":     "Submit",
-    "submitting": "Submitting..."
+    "submitting": "Submitting...",
+    "loading":    "Loading..."
   },
 
   "form": {

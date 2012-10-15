@@ -3,13 +3,13 @@
   return {
     //Local vars
     clients:    [],
-    memberID:   undefined,
     notes:      '',
     hours:      '',
     projectID:  undefined,
     projects:   [],
     tasks:      [],
     users:      [],
+    hoursFormDataFetched: false,
 
     defaultState: 'loading',
 
@@ -46,10 +46,19 @@
     },
 
     appActivated: function(data) {
-      var firstLoad = data && data.firstLoad;
-      if ( !firstLoad ) { return; }
+      if ( this.store('memberID') == null ) {
+        return this.goToChooseUser();
+      }
 
-      this.firstRequest();
+      if (!this.hoursFormDataFetched ) {
+        this.fetchHoursFormData();
+      }
+    },
+
+    goToChooseUser: function(data) {
+      this.switchTo('loading');
+      this._resetLocalVars();
+      this.fetchUsers();
     },
 
     backToForm: function() {
@@ -72,9 +81,7 @@
       this.ajax('loadTasks', this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
     },
 
-    firstRequest: function() {
-
-      this._resetLocalVars();
+    fetchUsers: function() {
       this.ajax('loadUsers', this._requestStaffList({ page: 1 }), this.settings.token);
     },
 
@@ -120,6 +127,7 @@
       } else {
         notes = this.I18n.t('form.note_text', { ticketID: this.ticket().id() });
 
+        this.hoursFormDataFetched = true;
         this.switchTo('hours', { projects: this.projects, notes: notes });
       }
     },
@@ -186,10 +194,9 @@
     },
 
     logout: function() {
-      var form = this.$('.hours form');
-
-      this.disableInput(form);
-      this.firstRequest();
+      this.disableInput( this.$('.hours form') );
+      this.store('memberID', null);
+      this.goToChooseUser();
     },
 
     maskUserInput: function(event) {
@@ -223,7 +230,7 @@
       if (!passed)
         return false;
 
-      options.staff_id = this.memberID;
+      options.staff_id = this.store('memberID');
       options.notes = form.find('.notes').val();
       this.disableInput(form);
       this.ajax('postHours', this._requestTimeEntryCreate(options), this.settings.token);
@@ -238,8 +245,13 @@
         return false;
       }
 
-      this.memberID = select.val();
+      this.store( 'memberID', select.val() );
       this.disableSubmit(form);
+      this.fetchHoursFormData();
+    },
+
+    fetchHoursFormData: function() {
+      this.switchTo('loading');
       this.ajax('loadClients', this._requestClientList({ page: 1 }), this.settings.token);
     },
 
@@ -283,8 +295,8 @@
     },
 
     _resetLocalVars: function() {
+      this.hoursFormDataFetched = false;
       this.clients =    [];
-      this.memberID =   undefined;
       this.notes =      '';
       this.hours =      '';
       this.projectID =  undefined;
