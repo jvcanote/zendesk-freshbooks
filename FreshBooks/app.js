@@ -125,10 +125,10 @@
       } else if (page < pages) {
         this.ajax('loadProjects', this._requestProjectList({ page: (page + 1) }), this.settings.token);
       } else {
-        notes = this.I18n.t('form.note_text', { ticketID: this.ticket().id() });
+        this.notes = this.I18n.t('form.note_text', { ticketID: this.ticket().id() });
 
         this.hoursFormDataFetched = true;
-        this.switchTo('hours', { projects: this.projects, notes: notes });
+        this.switchTo('hours', this);
       }
     },
 
@@ -148,7 +148,7 @@
       if (page < pages) {
         this.ajax('loadTasks', this._requestTaskList({ page: (page + 1), projectID: this.projectID }), this.settings.token);
       } else {
-        this.switchTo('hours', { projects: this.projects, hours: this.hours, notes: this.notes, tasks: this.tasks });
+        this.switchTo('hours', this);
 
         form = this.$('.hours form');
         this.enableInput(form);
