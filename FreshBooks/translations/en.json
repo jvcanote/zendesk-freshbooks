@@ -23,7 +23,8 @@
     "sign_in":    "Sign in",
     "submit":     "Submit",
     "submitting": "Submitting...",
-    "loading":    "Loading..."
+    "loading":    "Loading...",
+    "signed_in_as_message": "Signed in as {{name}}"
   },
 
   "form": {

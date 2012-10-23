@@ -196,6 +196,7 @@
     logout: function() {
       this.disableInput( this.$('.hours form') );
       this.store('memberID', null);
+      this.store('memberName', null);
       this.goToChooseUser();
     },
 
@@ -246,6 +247,7 @@
       }
 
       this.store( 'memberID', select.val() );
+      this.store( 'memberName', select.find(':selected').text() );
       this.disableSubmit(form);
       this.fetchHoursFormData();
     },
@@ -350,8 +352,11 @@
         data[key] = helpers.safeString( data[key] );
       });
       return encodeURI( this.renderTemplate(templateName, data) );
+    },
+
+    signedInAsMessage: function() {
+      return this.I18n.t('global.signed_in_as_message', { name: this.store('memberName') });
     }
   };
 
 }());
-

@@ -31,7 +31,17 @@ footer { display: none; }
     margin-top: 10px;
   }
 
-  footer { display: block; }
+  footer {
+    display: block;
+
+    &.current_user_info {
+      border-top: 1px dotted #ccc;
+      margin-top: 10px;
+      padding-top: 5px;
+
+      .logout { display: block; float: right; }
+    }
+  }
 }
 
 .message {

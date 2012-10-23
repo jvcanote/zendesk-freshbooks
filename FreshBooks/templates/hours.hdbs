@@ -31,7 +31,11 @@
     </div>
     <footer class="field">
       <input disabled="disabled" type="submit" value="{{t "global.submit"}}" class="submit btn btn-inverse" onclick="return false"/>
-      &nbsp;&nbsp;&nbsp;&nbsp; (<a class="logout" href="#" onclick="return false;">{{t "global.logout"}}</a>)
     </footer>
   </form>
+
+  <footer class='current_user_info'>
+    <span class='signed-in'>{{signedInAsMessage}}</span>
+    <a class="logout" href="#" onclick="return false;">{{t "global.logout"}}</a>
+  </footer>
 </div>
