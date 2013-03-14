@@ -274,11 +274,11 @@
     },
 
     _requestTimeEntryCreate: function(options) {
-      return this.renderAndEscapeXML( 'time_entry.xml', options );
+      return this.renderXML( 'time_entry.xml', options );
     },
 
     _requestPaginated: function(method, page) {
-      return this.renderAndEscapeXML('paginated.xml', {
+      return this.renderXML('paginated.xml', {
         method: method,
         page: page
       });
@@ -293,7 +293,7 @@
     },
 
     _requestTaskList: function(options) {
-      return this.renderAndEscapeXML( 'task_list.xml', options );
+      return this.renderXML( 'task_list.xml', options );
     },
 
     _resetLocalVars: function() {
@@ -347,11 +347,11 @@
       this.switchTo('submitFail', { message: msg });
     },
 
-    renderAndEscapeXML: function(templateName, data) {
+    renderXML: function(templateName, data) {
       Object.keys(data).forEach(function(key) {
         data[key] = helpers.safeString( data[key] );
       });
-      return encodeURI( this.renderTemplate(templateName, data) );
+      return this.renderTemplate(templateName, data);
     },
 
     signedInAsMessage: function() {
