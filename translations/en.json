@@ -4,7 +4,7 @@
       "token":  { "label": "Token" },
       "url":    {
         "label": "URL",
-        "helpText": "The API URL for your FreshBooks account. It should end in \"/api/2.1/xml-in\"."
+        "helpText": "The API URL for your FreshBooks account. It should end in api/2.1/xml-in."
       }
     },
 
