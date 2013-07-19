@@ -28,7 +28,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.error.occurred"
       title: "Error message"
-      value: "An error occured"
+      value: "An error occurred"
   - translation:
       key: "txt.apps.freshbooks_app.error.see_topic"
       title: "Error message inviting the user to visit a forum article"
@@ -88,7 +88,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.form.success"
       title: "success message when the user enters a number of hours and clicks submit"
-      value: "Hours sucessfuly logged!"
+      value: "Hours successfuly logged!"
   - translation:
       key: "txt.apps.freshbooks_app.invalidResponse"
       title: "error message about API response"
