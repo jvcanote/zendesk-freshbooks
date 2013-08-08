@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "Token"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "API URL’en til din FreshBooks-konto. Den skal slutte med /api/2.1/xml-in."
+      },
+      "description": "Spor let tid brugt på tickets med FreshBooks"
+    }
+  },
+  "error": {
+    "contact_email": "eller kontakt Freshbooks support på <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
+    "occurred": "Der forekom en fejl",
+    "see_topic": "Se <a target=\"_blank\">dette emne</a> for fejlfinding"
+  },
+  "global": {
+    "back": "Tilbage",
+    "logout": "log ud",
+    "sign_in": "Log ind",
+    "submit": "Send",
+    "submitting": "Sender…",
+    "loading": "Indlæser...",
+    "signed_in_as_message": "Logget på som {{name}}"
+  },
+  "form": {
+    "empty": "{{field}} er tom!",
+    "hours": "Timer",
+    "note_text": "Ticket: {{ticketID}}",
+    "notes": "Notater",
+    "select_project": "Projekt",
+    "select_task": "Opgave",
+    "success": "Timer der blev logført."
+  },
+  "invalidResponse": "API-respons indeholder ugyldige data.",
+  "problem": "Der opstod et problem: {{error}}",
+  "projects": {
+    "not_found": "Der blev ikke fundet projekter til din FreshBooks-konto."
+  },
+  "users": {
+    "none": "Kunne ikke finde nogle brugere.",
+    "not_found": "Der blev ikke fundet brugere til din FreshBooks-konto!",
+    "not_selected": "Der er ikke valgt en bruger!",
+    "select": "Vælg bruger"
+  }
+}

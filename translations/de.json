@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "Token"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "API-URL Ihres FreshBooks-Kontos. Sie endet in /api/2.1/xml-in."
+      },
+      "description": "FreshBooks: einfache Erfassung der auf Tickets aufgewendeten Zeit"
+    }
+  },
+  "error": {
+    "contact_email": "oder wenden Sie sich unter <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a> an den Freshbooks-Support.",
+    "occurred": "Fehler aufgetreten",
+    "see_topic": "In <a target=\"_blank\">diesem Thema</a> finden Sie Hinweise zur Fehlerbehebung."
+  },
+  "global": {
+    "back": "Zurück",
+    "logout": "Abmelden",
+    "sign_in": "Anmelden",
+    "submit": "Einreichen",
+    "submitting": "Einreichen...",
+    "loading": "Laden...",
+    "signed_in_as_message": "Angemeldet als {{name}}"
+  },
+  "form": {
+    "empty": "{{field}} ist leer!",
+    "hours": "Stunden",
+    "note_text": "Ticket: {{ticketID}}",
+    "notes": "Notizen",
+    "select_project": "Projekt",
+    "select_task": "Aufgabe",
+    "success": "Stunden erfolgreich erfasst!"
+  },
+  "invalidResponse": "API-Antwort enthält ungültige Daten!",
+  "problem": "Problem aufgetreten: {{error}}",
+  "projects": {
+    "not_found": "Keine Projekte für Ihr FreshBooks-Konto gefunden!"
+  },
+  "users": {
+    "none": "Keine Benutzer gefunden.",
+    "not_found": "Keine Benutzer für Ihr FreshBooks-Konto gefunden!",
+    "not_selected": "Kein Benutzer ausgewählt!",
+    "select": "Benutzer auswählen"
+  }
+}

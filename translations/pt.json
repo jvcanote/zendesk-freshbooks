@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "Token"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "A URL da API para sua conta da FreshBooks. Ela deve terminar em /api/2.1/xml-in."
+      },
+      "description": "Acompanhe facilmente o tempo gasto em tickets com a FreshBooks"
+    }
+  },
+  "error": {
+    "contact_email": "ou entre em contato com o suporte da Freshbooks em <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
+    "occurred": "Ocorreu um erro",
+    "see_topic": "Consulte <a target=\"_blank\">esse tópico</a> para obter a solução de problemas"
+  },
+  "global": {
+    "back": "Voltar",
+    "logout": "sair",
+    "sign_in": "Entrar",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "loading": "Carregando...",
+    "signed_in_as_message": "Conectado como {{name}}"
+  },
+  "form": {
+    "empty": "{{field}} está vazio!",
+    "hours": "Horas",
+    "note_text": "Ticket: {{ticketID}}",
+    "notes": "Observações",
+    "select_project": "Projeto",
+    "select_task": "Tarefa",
+    "success": "Horas registradas com êxito!"
+  },
+  "invalidResponse": "A resposta da API contém dados inválidos!",
+  "problem": "Ocorreu um problema: {{error}}",
+  "projects": {
+    "not_found": "Nenhum projeto foi encontrado para sua conta da FreshBooks!"
+  },
+  "users": {
+    "none": "Não foi possível encontrar usuários.",
+    "not_found": "Nenhum usuário encontrado para sua conta da FreshBooks!",
+    "not_selected": "Nenhum usuário selecionado!",
+    "select": "Selecionar usuário"
+  }
+}

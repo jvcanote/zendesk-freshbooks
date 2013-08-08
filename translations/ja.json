@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "トークン"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "あなたのFreshBooksアカウントのAPIのURL。末尾は/api/2.1/xml-inにしてください。"
+      },
+      "description": "FreshBooksでチケットに費やした時間を簡単に追跡します"
+    }
+  },
+  "error": {
+    "contact_email": "またはFreshbooksのサポート（<a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>）までお問い合わせください。",
+    "occurred": "エラーが発生しました",
+    "see_topic": "トラブルシューティングについては、<a target=\"_blank\">このトピック</a>をご覧ください"
+  },
+  "global": {
+    "back": "戻る",
+    "logout": "ログアウト",
+    "sign_in": "サインイン",
+    "submit": "送信",
+    "submitting": "送信中・・・",
+    "loading": "読み込み中...",
+    "signed_in_as_message": "{{name}}としてサインインに"
+  },
+  "form": {
+    "empty": "{{field}}が空です!",
+    "hours": "時間",
+    "note_text": "チケット：  {{ticketID}}",
+    "notes": "メモ",
+    "select_project": "プロジェクト",
+    "select_task": "タスク",
+    "success": "時間が正しく入力されました!"
+  },
+  "invalidResponse": "APIの応答に無効なデータが含まれています!",
+  "problem": "問題が発生しました: {{error}}",
+  "projects": {
+    "not_found": "FreshBooksのアカウントにプロジェクトが見つかりません!"
+  },
+  "users": {
+    "none": "ユーザーが見つかりませんでした。",
+    "not_found": "FreshBooksのアカウントにユーザーが見つかりません!",
+    "not_selected": "ユーザーが選択されていません!",
+    "select": "ユーザーを選択"
+  }
+}
