@@ -88,7 +88,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.form.success"
       title: "success message when the user enters a number of hours and clicks submit"
-      value: "Hours successfuly logged!"
+      value: "Hours successfully logged!"
   - translation:
       key: "txt.apps.freshbooks_app.invalidResponse"
       title: "error message about API response"
