@@ -88,11 +88,11 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.form.success"
       title: "success message when the user enters a number of hours and clicks submit"
-      value: "Hours successfully logged!"
+      value: "Hours successfully logged"
   - translation:
       key: "txt.apps.freshbooks_app.invalidResponse"
       title: "error message about API response"
-      value: "API response contains invalid data!"
+      value: "API response contains invalid data"
   - translation:
       key: "txt.apps.freshbooks_app.problem"
       title: "problem message, the placeholder here will contain the error message from freshbooks, could be something like, there's been a problem: the user already exists"
@@ -100,7 +100,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.projects.not_found"
       title: "Error message displayed in the App when there are no projects created yet on the freshbook account side"
-      value: "No projects found for your FreshBooks account!"
+      value: "No projects found for your FreshBooks account"
   - translation:
       key: "txt.apps.freshbooks_app.users.none"
       title: "Error message displayed in the App when there are no users created yet on the freshbook account side"
