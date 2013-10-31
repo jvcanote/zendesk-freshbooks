@@ -32,16 +32,16 @@
     "notes": "Notes",
     "select_project": "Project",
     "select_task": "Task",
-    "success": "Hours successfuly logged!"
+    "success": "Hours successfuly logged"
   },
-  "invalidResponse": "API response contains invalid data!",
+  "invalidResponse": "API response contains invalid data",
   "problem": "There's been a problem: {{error}}",
   "projects": {
-    "not_found": "No projects found for your FreshBooks account!"
+    "not_found": "No projects found for your FreshBooks account"
   },
   "users": {
     "none": "Could not find any users.",
-    "not_found": "No users found for your FreshBooks account!",
+    "not_found": "No users found for your FreshBooks account",
     "not_selected": "No user is selected!",
     "select": "Select User"
   }
