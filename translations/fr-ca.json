@@ -8,7 +8,7 @@
         "label": "URL",
         "helpText": "L’URL de l’API pour votre compte FreshBooks. Elle doit se terminer par /api/2.1/xml-in."
       },
-      "description": "Suivez facilement le temps consacré aux tickets avec FreshBooks."
+      "description": "Suivez facilement le temps consacré aux billets avec FreshBooks."
     }
   },
   "error": {
@@ -28,16 +28,16 @@
   "form": {
     "empty": "{{field}} est vide !",
     "hours": "Heures",
-    "note_text": "Ticket : {{ticketID}}",
+    "note_text": "Billet : {{ticketID}}",
     "notes": "Remarques",
     "select_project": "Projet",
     "select_task": "Tâche",
-    "success": "Heures enregistrées"
+    "success": "Heures enregistrées !"
   },
-  "invalidResponse": "La réponse API contient des données non valides.",
+  "invalidResponse": "La réponse API contient des données non valides !",
   "problem": "Un problème est survenu : {{error}}",
   "projects": {
-    "not_found": "Aucun projet trouvé pour votre compte FreshBooks."
+    "not_found": "Aucun projet trouvé pour votre compte FreshBooks !"
   },
   "users": {
     "none": "Aucun utilisateur trouvé.",

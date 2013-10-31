@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "Маркер"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "API URL для вашего аккаунта FreshBooks. Он должен заканчиваться на /api/2.1/xml-in."
+      },
+      "description": "FreshBooks - удобное отслеживание времени, затраченного на тикеты"
+    }
+  },
+  "error": {
+    "contact_email": "или обратитесь в службу поддержки Freshbooks по адресу <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
+    "occurred": "Произошла ошибка",
+    "see_topic": "Порядок устранения проблем - см. в <a>этой статье</a>"
+  },
+  "global": {
+    "back": "Назад",
+    "logout": "выход",
+    "sign_in": "Войти",
+    "submit": "Отправить",
+    "submitting": "Отправка...",
+    "loading": "Загрузка...",
+    "signed_in_as_message": "Вошел в сервис как {{name}}"
+  },
+  "form": {
+    "empty": "Поле {{field}} пусто!",
+    "hours": "Часы",
+    "note_text": "Тикет: {{ticketID}}",
+    "notes": "Примечания",
+    "select_project": "Проект",
+    "select_task": "Задача",
+    "success": "Часы успешно записаны в журнал"
+  },
+  "invalidResponse": "Ответ API содержит неверные данные",
+  "problem": "Возникла проблема: {{error}}",
+  "projects": {
+    "not_found": "Не найдены проекты для вашего аккаунта FreshBooks"
+  },
+  "users": {
+    "none": "Не удалось найти ни одного пользователя.",
+    "not_found": "Не найдены пользователи для вашего аккаунта FreshBooks!",
+    "not_selected": "Пользователь не выбран!",
+    "select": "Выберите пользователя"
+  }
+}

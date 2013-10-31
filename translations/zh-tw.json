@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "金鑰"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "您 FreshBooks 帳戶的 API URL。應以 /api/2.1/xml-in 結尾。"
+      },
+      "description": "用 FreshBooks 便捷追蹤工單花費的時間"
+    }
+  },
+  "error": {
+    "contact_email": "或聯絡 Freshbooks 支援：<a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>。",
+    "occurred": "發生錯誤",
+    "see_topic": "疑難排解請查閱<a>此主題</a>"
+  },
+  "global": {
+    "back": "上一步",
+    "logout": "登出",
+    "sign_in": "登入",
+    "submit": "提交",
+    "submitting": "提交中……",
+    "loading": "載入中……",
+    "signed_in_as_message": "登入為 {{name}}"
+  },
+  "form": {
+    "empty": "{{field}} 為空！",
+    "hours": "小時",
+    "note_text": "工單：{{ticketID}}",
+    "notes": "備註",
+    "select_project": "專案",
+    "select_task": "任務",
+    "success": "已成功記錄小時數"
+  },
+  "invalidResponse": "API 回應包含無效資料",
+  "problem": "出現問題：{{error}}",
+  "projects": {
+    "not_found": "您的 FreshBooks 帳戶中找不到專案"
+  },
+  "users": {
+    "none": "找不到任何使用者。",
+    "not_found": "您的 FreshBooks 帳戶中找不到使用者！",
+    "not_selected": "未選取使用者！",
+    "select": "選取使用者"
+  }
+}

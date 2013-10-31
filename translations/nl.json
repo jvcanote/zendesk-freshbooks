@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "Token"
+      },
+      "url": {
+        "label": "Webadres",
+        "helpText": "Het API-webadres voor uw FreshBooks-account. Dit moet eindigen op /api/2.1/xml-in."
+      },
+      "description": "Houd met FreshBooks eenvoudig tijd bij die aan tickets wordt besteed"
+    }
+  },
+  "error": {
+    "contact_email": "of neem contact op met Freshbooks-ondersteuning op <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
+    "occurred": "Fout opgetreden",
+    "see_topic": "Zie <a>dit onderwerp</a> voor probleemoplossing"
+  },
+  "global": {
+    "back": "Terug",
+    "logout": "afmelden",
+    "sign_in": "Aanmelden",
+    "submit": "Verzenden",
+    "submitting": "Verzenden...",
+    "loading": "Laden...",
+    "signed_in_as_message": "Aangemeld als {{name}}"
+  },
+  "form": {
+    "empty": "{{field}} is leeg!",
+    "hours": "Uur",
+    "note_text": "Ticket: {{ticketID}}",
+    "notes": "Notities",
+    "select_project": "Project",
+    "select_task": "Taak",
+    "success": "Uren gelogd"
+  },
+  "invalidResponse": "API-reactie bevat ongeldige gegevens",
+  "problem": "Er is een probleem: {{error}}",
+  "projects": {
+    "not_found": "Geen projecten gevonden voor uw FreshBooks-account"
+  },
+  "users": {
+    "none": "Kan geen gebruikers vinden.",
+    "not_found": "Geen gebruikers gevonden voor uw FreshBooks-account!",
+    "not_selected": "Geen gebruiker geselecteerd!",
+    "select": "Selecteer gebruiker"
+  }
+}

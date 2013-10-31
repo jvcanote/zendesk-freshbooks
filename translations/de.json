@@ -14,7 +14,7 @@
   "error": {
     "contact_email": "oder wenden Sie sich unter <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a> an den Freshbooks-Support.",
     "occurred": "Fehler aufgetreten",
-    "see_topic": "In <a target=\"_blank\">diesem Thema</a> finden Sie Hinweise zur Fehlerbehebung."
+    "see_topic": "In <a>diesem Thema</a> finden Sie Hinweise zur Fehlerbehebung."
   },
   "global": {
     "back": "Zurück",
@@ -32,12 +32,12 @@
     "notes": "Notizen",
     "select_project": "Projekt",
     "select_task": "Aufgabe",
-    "success": "Stunden erfolgreich erfasst!"
+    "success": "Stunden erfolgreich erfasst"
   },
-  "invalidResponse": "API-Antwort enthält ungültige Daten!",
+  "invalidResponse": "API-Antwort enthält ungültige Daten",
   "problem": "Problem aufgetreten: {{error}}",
   "projects": {
-    "not_found": "Keine Projekte für Ihr FreshBooks-Konto gefunden!"
+    "not_found": "Keine Projekte für Ihr FreshBooks-Konto gefunden"
   },
   "users": {
     "none": "Keine Benutzer gefunden.",

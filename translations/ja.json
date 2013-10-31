@@ -14,7 +14,7 @@
   "error": {
     "contact_email": "またはFreshbooksのサポート（<a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>）までお問い合わせください。",
     "occurred": "エラーが発生しました",
-    "see_topic": "トラブルシューティングについては、<a target=\"_blank\">このトピック</a>をご覧ください"
+    "see_topic": "トラブルシューティングについては、<a>このトピック</a>をご覧ください"
   },
   "global": {
     "back": "戻る",
@@ -23,7 +23,7 @@
     "submit": "送信",
     "submitting": "送信中・・・",
     "loading": "読み込み中...",
-    "signed_in_as_message": "{{name}}としてサインインに"
+    "signed_in_as_message": "{{name}}としてサインイン中"
   },
   "form": {
     "empty": "{{field}}が空です!",
@@ -32,12 +32,12 @@
     "notes": "メモ",
     "select_project": "プロジェクト",
     "select_task": "タスク",
-    "success": "時間が正しく入力されました!"
+    "success": "時間が正しく入力されました"
   },
-  "invalidResponse": "APIの応答に無効なデータが含まれています!",
+  "invalidResponse": "APIの応答に無効なデータが含まれています",
   "problem": "問題が発生しました: {{error}}",
   "projects": {
-    "not_found": "FreshBooksのアカウントにプロジェクトが見つかりません!"
+    "not_found": "FreshBooksのアカウントにプロジェクトが見つかりません"
   },
   "users": {
     "none": "ユーザーが見つかりませんでした。",

@@ -1,0 +1,48 @@
+{
+  "app": {
+    "parameters": {
+      "token": {
+        "label": "토큰"
+      },
+      "url": {
+        "label": "URL",
+        "helpText": "FreshBooks 계정에 대한 API URL로 /api/2.1/xml-in으로 끝나야 합니다."
+      },
+      "description": "FreshBooks로 손쉽게 티켓에 소요된 시간 추적"
+    }
+  },
+  "error": {
+    "contact_email": "또는 <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>으로 Freshbooks 지원 담당자에게 문의하십시오.",
+    "occurred": "오류가 발생했습니다",
+    "see_topic": "문제를 해결하려면 <a>이 주제</a>를 참조하십시오"
+  },
+  "global": {
+    "back": "뒤로",
+    "logout": "로그아웃",
+    "sign_in": "로그인",
+    "submit": "제출",
+    "submitting": "제출 중...",
+    "loading": "로드 중…",
+    "signed_in_as_message": "{{name}}(으)로 로그인"
+  },
+  "form": {
+    "empty": "{{field}}이(가) 비워 있습니다!",
+    "hours": "시간",
+    "note_text": "티켓: {{ticketID}}",
+    "notes": "메모",
+    "select_project": "프로젝트",
+    "select_task": "작업",
+    "success": "시간을 기록했습니다"
+  },
+  "invalidResponse": "API 응답에 잘못된 데이터가 포함되어 있습니다",
+  "problem": "다음과 같은 문제가 있었습니다. {{error}}",
+  "projects": {
+    "not_found": "FreshBooks 계정에 대한 프로젝트를 찾을 수 없습니다"
+  },
+  "users": {
+    "none": "어떤 사용자도 찾을 수 없습니다.",
+    "not_found": "FreshBooks 계정에 대한 사용자를 찾을 수 없습니다!",
+    "not_selected": "사용자를 선택하지 않았습니다!",
+    "select": "사용자 선택"
+  }
+}

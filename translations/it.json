@@ -14,7 +14,7 @@
   "error": {
     "contact_email": "oppure contatta l’assistenza Freshbooks a <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
     "occurred": "Si è verificato un errore",
-    "see_topic": "Per informazioni sulla soluzione dei problemi, vedere <a target=\"_blank\">questo argomento</a>"
+    "see_topic": "Per informazioni sulla soluzione dei problemi, vedere <a>questo argomento</a>"
   },
   "global": {
     "back": "Indietro",
@@ -32,12 +32,12 @@
     "notes": "Note",
     "select_project": "Progetto",
     "select_task": "Compito",
-    "success": "Ore registrate correttamente."
+    "success": "Ore registrate correttamente"
   },
-  "invalidResponse": "La risposta API contiene dati non validi.",
+  "invalidResponse": "La risposta API contiene dati non validi",
   "problem": "Si è verificato un problema: {{error}}",
   "projects": {
-    "not_found": "Nessun progetto trovato per il vostro account FreshBooks."
+    "not_found": "Nessun progetto trovato per il vostro account FreshBooks"
   },
   "users": {
     "none": "Nessun utente trovato",
