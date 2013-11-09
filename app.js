@@ -229,11 +229,20 @@
                 'task': "select_task"
               };
               var translationName = fieldNameToTranslationName[fieldName];
-
               var translatedFieldName = self.I18n.t("form." + translationName);
+              var errorMessage  = self.I18n.t('form.empty', { field: translatedFieldName });
 
-              alert(self.I18n.t('form.empty', { field: translatedFieldName }) );
+              var modalId = _.uniqueId();
+              var modal = self.renderTemplate('validation_modal', {
+                errorMessage: errorMessage,
+                id: modalId
+              });
+
+              field.parent().append(modal);
+              self.$('#'+ modalId).modal();
+
               passed = false;
+              return false;
             }
 
             options[name] = field.val();
