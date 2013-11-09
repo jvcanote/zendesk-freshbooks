@@ -221,7 +221,18 @@
             name = field.attr('name');
 
             if (!field.val()) {
-              alert( self.I18n.t('form.empty', { field: name.replace('_id', '').capitalize() }) );
+              var fieldName = name.replace('_id', '');
+              var fieldNameToTranslationName = {
+                'hours': "hours",
+                'notes': "notes",
+                'project': "select_project",
+                'task': "select_task"
+              };
+              var translationName = fieldNameToTranslationName[fieldName];
+
+              var translatedFieldName = self.I18n.t("form." + translationName);
+
+              alert(self.I18n.t('form.empty', { field: translatedFieldName }) );
               passed = false;
             }
 
