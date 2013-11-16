@@ -14,7 +14,7 @@
   "error": {
     "contact_email": "or contact Freshbooks support at <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
     "occurred": "An error occurred",
-    "see_topic": "See <a target=\"_blank\">this topic</a> for troubleshooting"
+    "see_topic": "See <a target=\"_blank\" href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
   },
   "global": {
     "back": "Back",
