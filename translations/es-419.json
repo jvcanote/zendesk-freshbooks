@@ -8,7 +8,7 @@
         "label": "URL",
         "helpText": "EL URL de la API para su cuenta de FreshBooks. Debe terminar en /api/2.1/xml-in."
       },
-      "description": "Lleve fácilmente un registro del tiempo que dedica a los tickets con FreshBooks"
+      "description": "Lleve fácilmente un registro del tiempo que dedica a tickets con FreshBooks"
     }
   },
   "error": {

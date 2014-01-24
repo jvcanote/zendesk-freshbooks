@@ -33,7 +33,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.error.see_topic"
       title: "Error message inviting the user to visit a forum article"
-      value: "See <a target='_blank'' href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
+      value: "See <a target='_blank' href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
   - translation:
       key: "txt.apps.freshbooks_app.global.back"
       title: "Back button"

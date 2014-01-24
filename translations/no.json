@@ -6,43 +6,43 @@
       },
       "url": {
         "label": "URL",
-        "helpText": "API URL’en til din FreshBooks-konto. Den skal slutte med /api/2.1/xml-in."
+        "helpText": "API URL for FreshBooks-kontoen. Den skal ha dette på slutten: /api/2.1/xml-in."
       },
-      "description": "Spor let tid brugt på tickets med FreshBooks"
+      "description": "Følg med på hvor mye tid som brukes på saker, med FreshBooks"
     }
   },
   "error": {
-    "contact_email": "eller kontakt Freshbooks support på <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
-    "occurred": "Der forekom en fejl",
-    "see_topic": "Se <a>dette emne</a> for fejlfinding"
+    "contact_email": "eller ta kontakt med Freshbooks-støtte på <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
+    "occurred": "Det oppstod en feil",
+    "see_topic": "Les <a>dette emnet</a> for feilretting"
   },
   "global": {
-    "back": "Tilbage",
-    "logout": "log ud",
-    "sign_in": "Log ind",
-    "submit": "Send",
-    "submitting": "Sender…",
-    "loading": "Indlæser...",
+    "back": "Tilbake",
+    "logout": "logg av",
+    "sign_in": "Logg på",
+    "submit": "Send inn",
+    "submitting": "Sender inn...",
+    "loading": "Laster...",
     "signed_in_as_message": "Logget på som {{name}}"
   },
   "form": {
-    "empty": "{{field}} er tom!",
+    "empty": "{{field}} er tomt!",
     "hours": "Timer",
-    "note_text": "Ticket: {{ticketID}}",
-    "notes": "Notater",
-    "select_project": "Projekt",
-    "select_task": "Opgave",
-    "success": "Timer der blev logført"
+    "note_text": "Sak: {{ticketID}}",
+    "notes": "Merknader",
+    "select_project": "Prosjekt",
+    "select_task": "Oppgave",
+    "success": "Timer som ble registrert"
   },
-  "invalidResponse": "API-respons indeholder ugyldige data",
-  "problem": "Der opstod et problem: {{error}}",
+  "invalidResponse": "API-responsen inneholder ugyldig data",
+  "problem": "Det har oppstått et problem: {{error}}",
   "projects": {
-    "not_found": "Der blev ikke fundet projekter til din FreshBooks-konto"
+    "not_found": "Finner ingen prosjekter for FreshBooks-kontoen"
   },
   "users": {
-    "none": "Kunne ikke finde nogle brugere.",
-    "not_found": "Der blev ikke fundet brugere til din FreshBooks-konto!",
-    "not_selected": "Der er ikke valgt en bruger!",
-    "select": "Vælg bruger"
+    "none": "Finner ingen brukere.",
+    "not_found": "Finner ingen brukere for FreshBooks-kontoen!",
+    "not_selected": "Ingen bruker er blitt valgt!",
+    "select": "Velg bruker"
   }
 }

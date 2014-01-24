@@ -2,47 +2,132 @@
   "app": {
     "parameters": {
       "token": {
-        "label": "Token"
+        "label": {
+          "title": "API token to define in the settings of the App",
+          "value": "Token"
+        }
       },
       "url": {
-        "label": "URL",
-        "helpText": "The API URL for your FreshBooks account. It should end in /api/2.1/xml-in."
+        "label": {
+          "title": "URL of the freshbooks account to define in the settings of the App",
+          "value": "URL"
+        },
+        "helpText": {
+          "title": "help text for providing the freshbooks account URL in the settings",
+          "value": "The API URL for your FreshBooks account. It should end in /api/2.1/xml-in."
+        }
       },
-      "description": "Easily track time spent on tickets with FreshBooks"
-    }
+      "description": {
+        "title": "Description of the App",
+        "value": "Easily track time spent on tickets with FreshBooks"
+      }
+    },
+    "package": "freshbooks_app"
   },
   "error": {
-    "contact_email": "or contact Freshbooks support at <a href=\"mailto:support@freshbooks.com\">support@freshbooks.com</a>.",
-    "occurred": "An error occurred",
-    "see_topic": "See <a target=\"_blank\" href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
+    "contact_email": {
+      "title": "Error message",
+      "value": "or contact Freshbooks support at <a href='mailto:support@freshbooks.com'>support@freshbooks.com</a>."
+    },
+    "occurred": {
+      "title": "Error message",
+      "value": "An error occurred"
+    },
+    "see_topic": {
+      "title": "Error message inviting the user to visit a forum article",
+      "value": "See <a target='_blank' href='https://support.zendesk.com/forums/4372'>this topic</a> for troubleshooting"
+    }
   },
   "global": {
-    "back": "Back",
-    "logout": "logout",
-    "sign_in": "Sign in",
-    "submit": "Submit",
-    "submitting": "Submitting...",
-    "loading": "Loading...",
-    "signed_in_as_message": "Signed in as {{name}}"
+    "back": {
+      "title": "Back button",
+      "value": "Back"
+    },
+    "logout": {
+      "title": "Logout link on the app",
+      "value": "logout"
+    },
+    "sign_in": {
+      "title": "Sign in label",
+      "value": "Sign in"
+    },
+    "submit": {
+      "title": "Submit button",
+      "value": "Submit"
+    },
+    "submitting": {
+      "title": "Wait text after clicking on the submit button",
+      "value": "Submitting..."
+    },
+    "loading": {
+      "title": "loading text after clicking on the submit button",
+      "value": "Loading..."
+    },
+    "signed_in_as_message": {
+      "title": "Signed in confirmation message, this will say the name of an agent for example signed in as Bob",
+      "value": "Signed in as {{name}}"
+    }
   },
   "form": {
-    "empty": "{{field}} is empty!",
-    "hours": "Hours",
-    "note_text": "Ticket: {{ticketID}}",
-    "notes": "Notes",
-    "select_project": "Project",
-    "select_task": "Task",
-    "success": "Hours successfuly logged"
+    "empty": {
+      "title": "This will declare that a field has not been completed. It will output the field name, for example priority is empty!",
+      "value": "{{field}} is empty!"
+    },
+    "hours": {
+      "title": "This is a label for a number input field to contain a number of hours for instance 17 hours",
+      "value": "Hours"
+    },
+    "note_text": {
+      "title": "This is the ticket number, this text is set by default in the note box",
+      "value": "Ticket: {{ticketID}}"
+    },
+    "notes": {
+      "title": "This is a notes fields label",
+      "value": "Notes"
+    },
+    "select_project": {
+      "title": "This is a project dropdown this is the title of that dropdown",
+      "value": "Project"
+    },
+    "select_task": {
+      "title": "This is the content of the dropdown it is a type of project",
+      "value": "Task"
+    },
+    "success": {
+      "title": "success message when the user enters a number of hours and clicks submit",
+      "value": "Hours successfully logged"
+    }
   },
-  "invalidResponse": "API response contains invalid data",
-  "problem": "There's been a problem: {{error}}",
+  "invalidResponse": {
+    "title": "error message about API response",
+    "value": "API response contains invalid data"
+  },
+  "problem": {
+    "title": "problem message, the placeholder here will contain the error message from freshbooks, could be something like, there's been a problem: the user already exists",
+    "value": "There's been a problem: {{error}}"
+  },
   "projects": {
-    "not_found": "No projects found for your FreshBooks account"
+    "not_found": {
+      "title": "Error message displayed in the App when there are no projects created yet on the freshbook account side",
+      "value": "No projects found for your FreshBooks account"
+    }
   },
   "users": {
-    "none": "Could not find any users.",
-    "not_found": "No users found for your FreshBooks account",
-    "not_selected": "No user is selected!",
-    "select": "Select User"
+    "none": {
+      "title": "Error message displayed in the App when there are no users created yet on the freshbook account side",
+      "value": "Could not find any users."
+    },
+    "not_found": {
+      "title": "Error message displayed in the App when there are no users created yet on the freshbook account side",
+      "value": "No users found for your FreshBooks account!"
+    },
+    "not_selected": {
+      "title": "message when no user has been selected in the app",
+      "value": "No user is selected!"
+    },
+    "select": {
+      "title": "message prompting the user to start selecting a user in the app",
+      "value": "Select User"
+    }
   }
 }

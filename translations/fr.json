@@ -8,7 +8,7 @@
         "label": "URL",
         "helpText": "L’URL de l’API pour votre compte FreshBooks. Elle doit se terminer par /api/2.1/xml-in."
       },
-      "description": "Suivez facilement le temps consacré aux tickets avec FreshBooks."
+      "description": "Suivez le temps consacré aux tickets avec FreshBooks."
     }
   },
   "error": {
