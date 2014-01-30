@@ -8,7 +8,7 @@
         "label": "URL",
         "helpText": "あなたのFreshBooksアカウントのAPIのURL。末尾は/api/2.1/xml-inにしてください。"
       },
-      "description": "FreshBooksでチケットに費やした時間を簡単に追跡します"
+      "description": "FreshBooksでチケットに費やした時間を簡単に追跡できます"
     }
   },
   "error": {
