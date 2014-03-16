@@ -3,7 +3,6 @@ title: "Freshbooks App"
 packages:
   - default
   - app_freshbooks_app
-  - classic
 
 parts:
   - translation:
