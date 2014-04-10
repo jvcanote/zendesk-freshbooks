@@ -78,6 +78,10 @@ parts:
       title: "This is a notes fields label"
       value: "Notes"
   - translation:
+      key: "txt.apps.freshbooks_app.form.notes_contains_percent_sign"
+      title: "This will declare that the notes field contains the percent sign."
+      value: "The Notes field cannot contain the percent sign ('%')"
+  - translation:
       key: "txt.apps.freshbooks_app.form.select_project"
       title: "This is a project dropdown this is the title of that dropdown"
       value: "Project"

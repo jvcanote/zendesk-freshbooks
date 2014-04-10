@@ -211,11 +211,14 @@
     },
 
     submitHours: function() {
-      var field, form = this.$('.hours form'), name, options = {}, passed = true, self = this;
+      var field, name, errorMessage,
+          form = this.$('.hours form'),
+          options = {},
+          passed = true,
+          self = this;
 
       form.find(':input')
           .not(':button, :submit, :reset, :hidden')
-          .not('textarea')
           .each(function(index, el) {
             field = self.$(el);
             name = field.attr('name');
@@ -230,26 +233,21 @@
               };
               var translationName = fieldNameToTranslationName[fieldName];
               var translatedFieldName = self.I18n.t("form." + translationName);
-              var errorMessage  = self.I18n.t('form.empty', { field: translatedFieldName });
-
-              var modalId = _.uniqueId();
-              var modal = self.renderTemplate('validation_modal', {
-                errorMessage: errorMessage,
-                id: modalId
-              });
-
-              field.parent().append(modal);
-              self.$('#'+ modalId).modal();
-
+              errorMessage  = self.I18n.t('form.empty', { field: translatedFieldName });
+              self.showValidationModal(field, errorMessage);
               passed = false;
-              return false;
+            }
+
+            if (field.val().indexOf("%") != -1 && name === 'notes') {
+              errorMessage  = self.I18n.t('form.notes_contains_percent_sign');
+              self.showValidationModal(field, errorMessage);
+              passed = false;
             }
 
             options[name] = field.val();
           });
 
-      if (!passed)
-        return false;
+      if (!passed) { return false; }
 
       options.staff_id = this.store('memberID');
       options.notes = form.find('.notes').val();
@@ -361,6 +359,17 @@
                                     this.I18n.t('invalidResponse') :
                                     this.I18n.t('problem', { error: errorThrown.toString() });
       this.showError(message);
+    },
+
+    showValidationModal: function(field, errorMessage) {
+      var modalId = _.uniqueId(),
+          modal = this.renderTemplate('validation_modal', {
+            errorMessage: errorMessage,
+            id: modalId
+          });
+
+      field.parent().append(modal);
+      this.$('#'+ modalId).modal();
     },
 
     showError: function(msg) {
