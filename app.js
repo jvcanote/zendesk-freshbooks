@@ -94,7 +94,7 @@
       });
 
       if (page < pages) {
-        this.ajax('loadClients', this._requestProjectList({ page: (page + 1) }), this.settings.token);
+        this.ajax('loadClients', this._requestClientList({ page: (page + 1) }), this.settings.token);
       } else {
         this.ajax('loadProjects', this._requestProjectList({ page: 1 }), this.settings.token);
       }
