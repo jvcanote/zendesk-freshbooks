@@ -343,6 +343,9 @@
     },
 
     enableInput: function(form) {
+      if ( !form.hasOwnProperty('find') ) {
+        form = this.$('.hours form');
+      }
       form.find(':input')
           .prop('disabled', false);
       form.find('a')
