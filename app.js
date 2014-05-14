@@ -27,7 +27,7 @@
       'click .hours .submit':                   'submitHours',
       'click .users .submit':                   'submitUser',
       'change .hours select[name=project_id]':  'changeProject',
-      'change .hours select[name=task_id]':     'enableInput',
+      'change .hours select[name=task_id]':     'changeTask',
       'keypress .hours input[name=hours]':      'maskUserInput',
 
       'app.activated': 'appActivated',
@@ -79,6 +79,11 @@
 
       this.disableInput(form);
       this.ajax('loadTasks', this._requestTaskList({ page: 1, projectID: this.projectID }), this.settings.token);
+    },
+
+    changeTask: function() {
+      var form = this.$('.hours form');
+      this.enableInput(form);
     },
 
     fetchUsers: function() {
@@ -343,9 +348,6 @@
     },
 
     enableInput: function(form) {
-      if ( !form.hasOwnProperty('find') ) {
-        form = this.$('.hours form');
-      }
       form.find(':input')
           .prop('disabled', false);
       form.find('a')
