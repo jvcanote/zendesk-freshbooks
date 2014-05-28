@@ -286,6 +286,7 @@
       return {
         data:         data,
         dataType:     'xml',
+        contentType:  'application/xml',
         type:         'POST',
         url:          this.settings.url,
         headers:      {
