@@ -64,7 +64,7 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.form.empty"
       title: "This will declare that a field has not been completed. It will output the field name, for example priority is empty!"
-      value: "{{field}} is empty!"
+      value: "{{field}} is empty."
   - translation:
       key: "txt.apps.freshbooks_app.form.hours"
       title: "This is a label for a number input field to contain a number of hours for instance 17 hours"
@@ -108,11 +108,11 @@ parts:
   - translation:
       key: "txt.apps.freshbooks_app.users.not_found"
       title: "Error message displayed in the App when there are no users created yet on the freshbook account side"
-      value: "No users found for your FreshBooks account!"
+      value: "No users found for your FreshBooks account."
   - translation:
       key: "txt.apps.freshbooks_app.users.not_selected"
       title: "message when no user has been selected in the app"
-      value: "No user is selected!"
+      value: "No user is selected."
   - translation:
       key: "txt.apps.freshbooks_app.users.select"
       title: "message prompting the user to start selecting a user in the app"
