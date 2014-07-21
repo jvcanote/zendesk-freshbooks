@@ -4,4 +4,4 @@
 
 This is the FreshBooks app for New Zendesk. It is available to all Zendesk
 accounts in the apps listing. Please submit bug reports to
-[FreshBooks](support@freshbooks.com). Pull requests are welcome.
+[FreshBooks](mailto:support@freshbooks.com). Pull requests are welcome.
